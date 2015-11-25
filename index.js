@@ -7,6 +7,11 @@ var express = require('express'),
 
 var app = express();
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(helmet());
+app.use(morgan('dev'));
+
 if (config.port) {
     app.listen(config.port, function () {
         console.log("# Server ON")

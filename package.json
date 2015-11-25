@@ -1,0 +1,44 @@
+{
+  "name": "gw2-raid-webapp",
+  "version": "1.0.0",
+  "description": "Guildwars 2 raid webapp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/intr/gw2-raid-webapp.git"
+  },
+  "keywords": [
+    "gw2",
+    "guild",
+    "wars2",
+    "guildwars2",
+    "guild",
+    "2",
+    "wars",
+    "instars",
+    "intr",
+    "mievstac"
+  ],
+  "author": "Mievstac <mievstac@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/intr/gw2-raid-webapp/issues"
+  },
+  "homepage": "https://github.com/intr/gw2-raid-webapp#readme",
+  "dependencies": {
+    "express": "^4.13.3",
+    "helmet": "^0.14.0"
+  },
+  "devDependencies": {
+    "babel": "^6.1.18",
+    "babel-core": "^6.2.1",
+    "babel-preset-es2015": "^6.1.18",
+    "babel-preset-react": "^6.1.18",
+    "chai": "^3.4.1",
+    "mocha": "^2.3.4",
+    "webpack": "^1.12.9"
+  }
+}

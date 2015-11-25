@@ -7,8 +7,9 @@ var chai = require('chai'),
 describe('Config.js', function () {
     describe('#port', function () {
         it('should return port number', function() {
-            assert.isNotNull(config.port);
-            assert.isNumber(config.port);
+            var PORT = config.port;
+            assert.isNotNull(PORT);
+            assert.isNumber(PORT);
         })
     })
 });

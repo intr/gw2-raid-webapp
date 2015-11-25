@@ -4,6 +4,6 @@
 2. CD to repo
 3. npm install
 
-???(Optional packages, **gulp**, **webpack**)
-???*npm install -g gulp webpack*
+(Optional packages, **gulp**, **webpack**)
+*npm install -g gulp webpack*
 *Authors: intr, mievstac*

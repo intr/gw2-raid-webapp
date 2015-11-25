@@ -29,8 +29,12 @@
   },
   "homepage": "https://github.com/intr/gw2-raid-webapp#readme",
   "dependencies": {
+    "body-parser": "^1.14.1",
     "express": "^4.13.3",
-    "helmet": "^0.14.0"
+    "helmet": "^0.14.0",
+    "mongoose": "^4.2.8",
+    "morgan": "^1.6.1",
+    "react": "^0.14.3"
   },
   "devDependencies": {
     "babel": "^6.1.18",

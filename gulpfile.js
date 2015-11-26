@@ -4,9 +4,10 @@ var webpack = require('gulp-webpack');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 
-gulp.task('build', function () {
+gulp.task('webpack', function () {
     return gulp.src('public/src/index.js')
         .pipe(webpack({
+            watch: true,
             module: {
                 loaders: [
                     {

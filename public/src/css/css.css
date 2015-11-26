@@ -1,0 +1,22 @@
+.raidRole-false{
+    display : inline;
+    color:green;
+}
+
+.raidRole-true{
+    display : inline;
+    color:red;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.pointerCursor{
+    cursor: pointer;
+}

@@ -3,6 +3,7 @@ var watch = require('gulp-watch');
 var webpack = require('gulp-webpack');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
+var minifyCss = require('gulp-minify-css');
 
 gulp.task('webpack', function () {
     return gulp.src('public/src/index.js')
@@ -25,5 +26,11 @@ gulp.task('webpack', function () {
             }
         }))
         //.pipe(uglify())
+        .pipe(gulp.dest('public/build'))
+});
+
+gulp.task('css', function () {
+    return gulp.src('public/src/css/css.css')
+        .pipe(minifyCss())
         .pipe(gulp.dest('public/build'))
 });

@@ -4,7 +4,7 @@ var webpack = require('gulp-webpack');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 
-gulp.task('build', function() {
+gulp.task('build', function () {
     return gulp.src('public/src/index.js')
         .pipe(webpack({
             module: {
@@ -18,11 +18,11 @@ gulp.task('build', function() {
                         }
                     }
                 ]
+            },
+            output: {
+                filename: "bundle.js"
             }
         }))
         .pipe(uglify())
-        .pipe(rename({
-            extname: 'build.js'
-        }))
         .pipe(gulp.dest('public/build'))
 });

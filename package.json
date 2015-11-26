@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha test",
+    "build": "gulp build",
     "start": "node index.js"
   },
   "repository": {
@@ -23,7 +24,7 @@
     "intr",
     "mievstac"
   ],
-  "author": "Mievstac <mievstac@gmail.com>",
+  "author": "Mievstac <mievstac@gmail.com>, intr <intars.locmelis@edu.rtu.lv>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/intr/gw2-raid-webapp/issues"

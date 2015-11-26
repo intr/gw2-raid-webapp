@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SelectRole from './components/selectRole/selectRole.js';
+import SelectRole from './components/selectRole/selectRole';
+import SelectClass from './components/selectClass/selectClass';
 const AppBar = require('material-ui/lib/app-bar');
 
 class ToggleText extends React.Component {
     constructor(props) {
         super(props);
         this.state = {showDefault: true};
-        this.toggle = this.toggle.bind(this);
     }
 
     toggle(e) {
@@ -23,13 +23,13 @@ class ToggleText extends React.Component {
         return (
             <div>
                 <h1>Hello {message}!</h1>
-                <a href="" onClick={this.toggle}>Toggle</a>
+                <a href="" onClick={this.toggle.bind(this)}>Toggle</a>
             </div>
         );
     }
 }
 
 ReactDOM.render(
-    <SelectRole />,
+    <SelectClass />,
     document.getElementById('example')
 );

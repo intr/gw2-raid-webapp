@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+const AppBar = require('material-ui/lib/app-bar');
 
 ReactDOM.render(
-    <h1>Hello, world!</h1>,
+    <AppBar
+        title="Title"
+        iconClassNameRight="muidocs-icon-navigation-expand-more" />,
     document.getElementById('example')
 );

@@ -6,9 +6,9 @@ class RoleSelection extends Component {
     render() {
         return (
             <div>
-                <Role role="Dps" />
-                <Role role="Healer" />
-                <Role role="Tank" />
+                <Role raidInfo={this.props.raidInfo} onClick={(id) => this.props.onRoleClick(id)} role="Dps"/>
+                <Role raidInfo={this.props.raidInfo} onClick={(id) => this.props.onRoleClick(id)} role="Healer"/>
+                <Role raidInfo={this.props.raidInfo} onClick={(id) => this.props.onRoleClick(id)} role="Tank"/>
             </div>
         )
     }

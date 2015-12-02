@@ -36,12 +36,17 @@
     "gulp": "^3.9.0",
     "gulp-rename": "^1.2.2",
     "helmet": "^0.14.0",
+    "history": "^1.13.1",
+    "immutable": "^3.7.5",
     "material-ui": "^0.13.4",
     "mongoose": "^4.2.8",
     "morgan": "^1.6.1",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
-    "react-tap-event-plugin": "^0.2.1"
+    "react-redux": "^4.0.0",
+    "react-router": "^1.0.0",
+    "react-tap-event-plugin": "^0.2.1",
+    "redux": "^3.0.4"
   },
   "devDependencies": {
     "babel": "^6.1.18",

@@ -2,37 +2,49 @@ import React from 'react';
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import Immutable from 'immutable';
-const Card = require('material-ui/lib/card/card');
-const CardHeader = require('material-ui/lib/card/card-header');
+const List = require('material-ui/lib/lists/list');
+const Avatar = require('material-ui/lib/avatar');
+const ListDivider = require('material-ui/lib/lists/list-divider');
+const ListItem = require('material-ui/lib/lists/list-item');
+import { removeCharacterInfo } from '../../redux/actions/CharacterList';
 
 class ViewComponent extends Component {
+
+
     render() {
-        const { raidInfo, characterList } = this.props;
-        const DPS = raidInfo.get('Dps') ? "DPS: TRUE" : "DPS: FALSE";
-        const TANK = raidInfo.get('Tank') ? "TANK: TRUE" : "TANK: FALSE";
-        const HEALER = raidInfo.get('Healer') ? "HEALER: TRUE" : "HEALER: FALSE";
-        const CLASS = raidInfo.get('class');
-        const USERNAME = raidInfo.get('username');
+        const { dispatch, raidInfo, characterList } = this.props;
         return (
             <div>
-                <Card>
-                    <CardHeader
-                        title="Roles"
-                    />
-                    <p>{DPS}</p>
-                    <p>{HEALER}</p>
-                    <p>{TANK}</p>
-                    <p>{CLASS}</p>
-                    <p>{USERNAME}</p>
-                </Card>
-                {characterList.map((character, index) => {
-                    return (
-                        <div key={index}>
-                            <h1>{character.username}</h1>
-                            <p>{character.class}</p>
-                        </div>
-                    )
-                })}
+                <List key="CHARACTER_LIST">
+                    {characterList.map((character, index) => {
+                        const imgSrc = "/build/img/classes/" + character.class + ".png";
+                        const HEALER = character.Healer ? "Healer: True" : "Healer: False";
+                        const TANK = character.Tank ? "Tank: True" : "Tank: False";
+                        const DPS = character.Dps ? "Dps: True" : "Dps: False";
+
+                        return (
+                            <div id={index}>
+                                <ListItem
+                                    key={index}
+                                    value={index}
+                                    leftAvatar={<Avatar key={imgSrc} src={imgSrc} />}
+                                    primaryText={character.username}
+                                    initiallyOpen={true}
+                                    onTouchTap={() => {
+                                        dispatch(removeCharacterInfo(index));
+                                    }}
+                                    nestedItems={[
+                                    <div>
+                                        <ListItem key={DPS} primaryText={DPS} />
+                                        <ListItem key={HEALER} primaryText={HEALER} />
+                                        <ListItem key={TANK} primaryText={TANK} />
+                                        </div>
+                                    ]}
+                                />
+                            </div>
+                        )
+                    })}
+                </List>
             </div>
         )
     }

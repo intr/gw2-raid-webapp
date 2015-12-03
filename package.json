@@ -32,12 +32,14 @@
   "homepage": "https://github.com/intr/gw2-raid-webapp#readme",
   "dependencies": {
     "body-parser": "^1.14.1",
+    "browser-request": "^0.3.3",
     "express": "^4.13.3",
     "gulp": "^3.9.0",
     "gulp-rename": "^1.2.2",
     "helmet": "^0.14.0",
     "history": "^1.13.1",
     "immutable": "^3.7.5",
+    "isomorphic-fetch": "^2.2.0",
     "material-ui": "^0.13.4",
     "mongoose": "^4.2.8",
     "morgan": "^1.6.1",
@@ -46,7 +48,8 @@
     "react-redux": "^4.0.0",
     "react-router": "^1.0.0",
     "react-tap-event-plugin": "^0.2.1",
-    "redux": "^3.0.4"
+    "redux": "^3.0.4",
+    "redux-thunk": "^1.0.0"
   },
   "devDependencies": {
     "babel": "^6.1.18",

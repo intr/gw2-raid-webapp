@@ -9,6 +9,12 @@ import RoleSelection from './gwRoleSelection/gwRoleSelection';
 import ClassSelection from './gwClassSelection/gwClassSelection';
 import UsernameField from './autocomplete/autocomplete';
 import Immutable from 'immutable';
+import BigCalendar from 'react-big-calendar';
+import moment from 'moment';
+import events from './events';
+
+BigCalendar.momentLocalizer(moment);
+
 class AddRaidInfo extends Component {
     render() {
         let injectTapEventPlugin = require("react-tap-event-plugin");
@@ -88,6 +94,19 @@ class AddRaidInfo extends Component {
                             }
                         }}
                         label="Submit" />
+                </div>
+                <div className="pure-u-1-1">
+                    <BigCalendar
+                        selectable
+                        events={events}
+                        defaultView='week'
+                        defaultDate={new Date()}
+                        onSelectEvent={event => alert(event.title)}
+                        onSelectSlot={(slotInfo) => alert(
+                        `selected slot: \n\nstart ${slotInfo.start.toLocaleString()} ` +
+                        `\nend: ${slotInfo.end.toLocaleString()}`
+                      )}
+                    />
                 </div>
             </div>
         )

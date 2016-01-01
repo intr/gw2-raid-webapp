@@ -98,13 +98,14 @@ class AddRaidInfo extends Component {
                 <div className="pure-u-1-1">
                     <BigCalendar
                         selectable
+                        culture="lv-LV"
                         events={events}
                         defaultView='week'
                         defaultDate={new Date()}
                         onSelectEvent={event => alert(event.title)}
-                        onSelectSlot={(slotInfo) => alert(
-                        `selected slot: \n\nstart ${slotInfo.start.toLocaleString()} ` +
-                        `\nend: ${slotInfo.end.toLocaleString()}`
+                        onSelectSlot={(slotInfo) =>  (
+                            `selected slot: \n\nstart ${slotInfo.start.toLocaleString()} ` +
+                            `\nend: ${slotInfo.end.toLocaleString()}`
                       )}
                     />
                 </div>

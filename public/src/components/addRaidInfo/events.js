@@ -1,24 +1,18 @@
 export default [
     {
-        "title": "All Day Event",
-        "allDay": true,
-        "start": new Date(2015, 3, 0),
-        "end": new Date(2015, 3, 0)
-    },
-    {
         "title": "Long Event",
-        "start": new Date(2015, 3, 7),
-        "end": new Date(2015, 3, 10),
+        "start": new Date(2016, 0, 1),
+        "end": new Date(2016, 0, 2),
     },
     {
         "title": "Some Event",
-        "start": new Date(2015, 3, 9, 0, 0, 0),
-        "end": new Date(2015, 3, 9, 0, 0, 0),
+        "start": new Date(2016, 0, 2, 0, 0, 0),
+        "end": new Date(2016, 0, 3, 0, 0, 0),
     },
     {
         "title": "Conference",
-        "start": new Date(2015, 3, 11),
-        "end": new Date(2015, 3, 13),
+        "start": new Date(2015, 11, 30),
+        "end": new Date(2015, 11, 31),
         desc: 'Big conference for important people'
     },
     {

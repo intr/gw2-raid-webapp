@@ -103,9 +103,17 @@ class AddRaidInfo extends Component {
                         defaultView='week'
                         defaultDate={new Date()}
                         onSelectEvent={event => alert(event.title)}
-                        onSelectSlot={(slotInfo) =>  (
+                        onSelectSlot={(slotInfo) => alert(
                             `selected slot: \n\nstart ${slotInfo.start.toLocaleString()} ` +
                             `\nend: ${slotInfo.end.toLocaleString()}`
+                        /*(
+                            events.push(
+                                {
+                                    "title": "new Event",
+                                    "start": slotInfo.start,
+                                    "end": slotInfo.end
+                                }
+                            )*/
                       )}
                     />
                 </div>

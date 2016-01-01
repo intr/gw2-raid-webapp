@@ -24,3 +24,7 @@
 .RaidApp{
     display: inline-block
 }
+
+.rbc-gutter-cell{
+    width: 50px;
+}

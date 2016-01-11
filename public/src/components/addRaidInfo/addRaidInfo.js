@@ -9,6 +9,12 @@ import RoleSelection from './gwRoleSelection/gwRoleSelection';
 import ClassSelection from './gwClassSelection/gwClassSelection';
 import UsernameField from './autocomplete/autocomplete';
 import Immutable from 'immutable';
+import BigCalendar from 'react-big-calendar';
+import moment from 'moment';
+import events from './events';
+
+BigCalendar.momentLocalizer(moment);
+
 class AddRaidInfo extends Component {
     render() {
         let injectTapEventPlugin = require("react-tap-event-plugin");
@@ -20,7 +26,7 @@ class AddRaidInfo extends Component {
         const usernames = ["Flatbutter.1234", "Instars.1235"];
         return (
             <div className="pure-g">
-                <div className="pure-u-1-5">
+                <div className="pure-u-1-4">
                     <UsernameField
                         onUpdateInput={username => {
                     dispatch(addUsername(username));
@@ -28,7 +34,7 @@ class AddRaidInfo extends Component {
                         usernames={usernames}
                     />
                 </div>
-                <div className="pure-u-1-5">
+                <div className="pure-u-1-4">
                     <RoleSelection
                         raidInfo={raidInfo}
                         onRoleClick={role => {
@@ -36,7 +42,7 @@ class AddRaidInfo extends Component {
                 }}
                     />
                 </div>
-                <div className="pure-u-1-5">
+                <div className="pure-u-1-4">
                     <ClassSelection
                         selectedClass={raidInfo.get('class')}
                         onClassClick={GWclass => {
@@ -44,31 +50,7 @@ class AddRaidInfo extends Component {
                     }}
                     />
                 </div>
-                <div className="pure-u-1-5">
-                    <FlatButton
-                        onTouchTap={() => {
-                            if(raidInfo.get('Dps') || raidInfo.get('Tank') || raidInfo.get('Healer')){
-                                if(raidInfo.get('class')) {
-                                    if(raidInfo.get('username')) {
-                                        dispatch(addCharacterInfo({
-                                        Dps: raidInfo.get("Dps"),
-                                        Tank: raidInfo.get("Tank"),
-                                        Healer: raidInfo.get("Healer"),
-                                        class: raidInfo.get("class"),
-                                        username: raidInfo.get("username")
-                                        }));
-                                        console.log(characterList);
-                                    } else {
-                                    console.log("ENTER USERNAME!")
-                                    }
-                                }
-                            } else {
-                            console.log("SELECT ROLE!")
-                            }
-                        }}
-                        label="Add" />
-                </div>
-                <div className="pure-u-1-5">
+                <div className="pure-u-1-4">
                     <FlatButton
                         onTouchTap={() => {
                             if(raidInfo.get('Dps') || raidInfo.get('Tank') || raidInfo.get('Healer')){
@@ -88,6 +70,38 @@ class AddRaidInfo extends Component {
                             }
                         }}
                         label="Submit" />
+                </div>
+                <div className="pure-u-1-1">
+                    <BigCalendar
+                        selectable
+                        culture="lv-LV"
+                        events={events}
+                        defaultView='week'
+                        defaultDate={new Date()}
+                        onSelectEvent={event => alert(event.title)}
+                        onSelectSlot={(slotInfo) => /*alert(
+                            `selected slot: \n\nstart ${slotInfo.start.toLocaleString()} ` +
+                            `\nend: ${slotInfo.end.toLocaleString()}`*/
+                        (
+                            events.push(
+                                {
+                                    "title": "new Event",
+                                    "start": slotInfo.start,
+                                    "end": slotInfo.end
+                                }
+                            ),
+                            dispatch(addCharacterInfo({
+                                        Dps: raidInfo.get("Dps"),
+                                        Tank: raidInfo.get("Tank"),
+                                        Healer: raidInfo.get("Healer"),
+                                        class: raidInfo.get("class"),
+                                        username: raidInfo.get("username"),
+                                        startDate: slotInfo.start,
+                                        endDate: slotInfo.end
+                                        })),
+                            this.forceUpdate()
+                      )}
+                    />
                 </div>
             </div>
         )

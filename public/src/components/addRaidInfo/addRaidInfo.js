@@ -34,7 +34,7 @@ class AddRaidInfo extends Component {
                         usernames={usernames}
                     />
                 </div>
-                <div className="pure-u-3-24">
+                <div className="pure-u-4-24">
                     <RoleSelection
                         raidInfo={raidInfo}
                         onRoleClick={role => {
@@ -42,7 +42,7 @@ class AddRaidInfo extends Component {
                 }}
                     />
                 </div>
-                <div className="pure-u-16-24">
+                <div className="pure-u-15-24">
                     <ClassSelection
                         selectedClass={raidInfo.get('class')}
                         onClassClick={GWclass => {
@@ -75,7 +75,7 @@ class AddRaidInfo extends Component {
                 <div className="pure-u-1-1">
                     <BigCalendar
                         selectable
-                        toolbar="false"
+                        toolbar={false}
                         culture="lv-LV"
                         events={events}
                         defaultView='week'
@@ -87,7 +87,7 @@ class AddRaidInfo extends Component {
                         (
                             events.push(
                                 {
-                                    "title": "new Event",
+                                    "title": "Reida laiks",
                                     "start": slotInfo.start,
                                     "end": slotInfo.end
                                 }

@@ -4,6 +4,7 @@ import Immutable from 'immutable';
 
 class Role extends Component {
 
+
     onClick(e) {
         this.props.onClick(e.target.id);
     }
@@ -12,14 +13,16 @@ class Role extends Component {
         const raidInfo = Immutable.Map(this.props.raidInfo);
         let imgSrc = "/build/img/" + this.props.role + "Icon.jpg";
         return (
-            <img
-                title={this.props.role + "-" + raidInfo.get(this.props.role)}
-                style={{
-          borderWidth: raidInfo.get(this.props.role) ? '1px' : '1px',
-          borderStyle: raidInfo.get(this.props.role)  ? 'solid' : 'dashed',
-          color: raidInfo.get(this.props.role) ? 'red' : 'black'
-        }}
-                onClick={this.onClick.bind(this)} src={imgSrc} id={this.props.role}/>
+            <a className={raidInfo.get(this.props.role) ? "selected" : "unselected"} href="#">
+                <img
+                    title={this.props.role + "-" + raidInfo.get(this.props.role)}
+                    style={{
+                    borderWidth: raidInfo.get(this.props.role) ? '2px' : '2px',
+                    borderStyle: raidInfo.get(this.props.role)  ? 'solid' : 'dashed',
+                    color: raidInfo.get(this.props.role) ? 'yellow' : 'black'
+                    }}
+                    onClick={this.onClick.bind(this)} src={imgSrc} id={this.props.role}/>
+            </a>
         )
     }
 }

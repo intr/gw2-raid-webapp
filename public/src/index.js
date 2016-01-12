@@ -12,7 +12,6 @@ class RaidApp extends Component {
             <Provider store={Store}>
                 <div>
                     <AddRaidInfo />
-                    <ViewComponent />
                 </div>
             </Provider>
         )

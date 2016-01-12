@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import React from 'react';
+import Immutable from 'immutable';
 
 class GwClass extends Component {
 
@@ -8,20 +9,21 @@ class GwClass extends Component {
     }
 
     render() {
+        const raidInfo = Immutable.Map(this.props.raidInfo);
         let imgSrc = "/build/img/classes/" + this.props.class + ".png";
-        const { selectedClass } = this.props;
         return (
+            <a className={raidInfo.get(this.props.class) ? "selected" : "unselected"} href="#">
             <img
                 style={{
                 width:'80px',
-                height:'80px',
-                opacity: selectedClass == this.props.class ? '1' : '0.2'
+                height:'80px'
                 }}
                 onClick={this.onClick.bind(this)}
                 title={this.props.class}
                 alt={this.props.class}
                 id={this.props.class}
                 src={imgSrc} />
+            </a>
         )
     }
 }

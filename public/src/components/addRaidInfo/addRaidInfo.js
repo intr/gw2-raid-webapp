@@ -38,15 +38,15 @@ class AddRaidInfo extends Component {
                     <RoleSelection
                         raidInfo={raidInfo}
                         onRoleClick={role => {
-                    dispatch(addRole(role));
+                        dispatch(addRole(role));
                 }}
                     />
                 </div>
                 <div className="pure-u-15-24">
                     <ClassSelection
-                        selectedClass={raidInfo.get('class')}
-                        onClassClick={GWclass => {
-                    dispatch(addClass(GWclass));
+                        raidInfo={raidInfo}
+                        onClassClick={gwClass => {
+                        dispatch(addClass(gwClass));
                     }}
                     />
                 </div>
@@ -55,7 +55,7 @@ class AddRaidInfo extends Component {
                         primary={true}
                         onTouchTap={() => {
                             if(raidInfo.get('Dps') || raidInfo.get('Tank') || raidInfo.get('Healer')){
-                                if(raidInfo.get('class')) {
+                                if(raidInfo.get('Elementalist') || raidInfo.get('Engineer') || raidInfo.get('Guardian') || raidInfo.get('Mesmer') || raidInfo.get('Necromancer') || raidInfo.get('Ranger') || raidInfo.get('Revenant') || raidInfo.get('Thief') || raidInfo.get('Warrior')) {
                                     if(raidInfo.get('username')) {
                                         if(characterList.size > 0) {
                                             dispatch(submitApp(characterList.toJS()))
@@ -93,13 +93,21 @@ class AddRaidInfo extends Component {
                                 }
                             ),
                             dispatch(addCharacterInfo({
+                                        username: raidInfo.get("username"),
+                                        startDate: slotInfo.start,
+                                        endDate: slotInfo.end,
                                         Dps: raidInfo.get("Dps"),
                                         Tank: raidInfo.get("Tank"),
                                         Healer: raidInfo.get("Healer"),
-                                        class: raidInfo.get("class"),
-                                        username: raidInfo.get("username"),
-                                        startDate: slotInfo.start,
-                                        endDate: slotInfo.end
+                                        Elementalist: raidInfo.get("Elementalist"),
+                                        Engineer: raidInfo.get("Engineer"),
+                                        Guardian: raidInfo.get("Guardian"),
+                                        Mesmer: raidInfo.get("Mesmer"),
+                                        Necromancer: raidInfo.get("Necromancer"),
+                                        Ranger: raidInfo.get("Ranger"),
+                                        Revenant: raidInfo.get("Revenant"),
+                                        Thief: raidInfo.get("Thief"),
+                                        Warrior: raidInfo.get("Warrior")
                                         })),
                             this.forceUpdate()
                       )}

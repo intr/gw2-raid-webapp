@@ -1,3 +1,11 @@
+@font-face
+{
+    font-family: 'CronosPro';
+    src: url('https://d1h9a8s8eodvjz.cloudfront.net//fonts/cronos/v1/cronospro-semibold-webfont.woff') format('woff');
+    font-weight:bold;
+    font-style:normal;
+}
+
 .raidRole-false{
     display : inline;
     color:green;
@@ -27,4 +35,36 @@
 
 .rbc-gutter-cell{
     width: 50px;
+}
+
+label {
+    font-family: "CronosPro", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+div.pure-u-1-4 * {
+    margin-top: 2px;
+}
+
+div.pure-u-1-8:nth-child(-n+5) {
+    margin-top: 12px;
+}
+/*
+div.pure-u-3-24 {
+    min-width: 190px;
+}
+*/
+
+.submit {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+button {
+    margin: auto;
+    width: 60%;
+    border: 3px solid #73AD21;
+    padding: 10px;
 }

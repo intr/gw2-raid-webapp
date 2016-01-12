@@ -4,7 +4,7 @@ import { Component } from 'react';
 import { addRole, addClass, addUsername } from '../../redux/actions/addRaidInfo';
 import { addCharacterInfo } from '../../redux/actions/CharacterList';
 import { submitApp } from '../../redux/actions/index';
-const FlatButton = require('material-ui/lib/flat-button');
+const RaisedButton = require('material-ui/lib/raised-button');
 import RoleSelection from './gwRoleSelection/gwRoleSelection';
 import ClassSelection from './gwClassSelection/gwClassSelection';
 import UsernameField from './autocomplete/autocomplete';
@@ -26,15 +26,15 @@ class AddRaidInfo extends Component {
         const usernames = ["Flatbutter.1234", "Instars.1235"];
         return (
             <div className="pure-g">
-                <div className="pure-u-1-4">
+                <div className="pure-u-5-24">
                     <UsernameField
                         onUpdateInput={username => {
-                    dispatch(addUsername(username));
+                        dispatch(addUsername(username));
                     }}
                         usernames={usernames}
                     />
                 </div>
-                <div className="pure-u-1-4">
+                <div className="pure-u-3-24">
                     <RoleSelection
                         raidInfo={raidInfo}
                         onRoleClick={role => {
@@ -42,7 +42,7 @@ class AddRaidInfo extends Component {
                 }}
                     />
                 </div>
-                <div className="pure-u-1-4">
+                <div className="pure-u-16-24">
                     <ClassSelection
                         selectedClass={raidInfo.get('class')}
                         onClassClick={GWclass => {
@@ -50,8 +50,9 @@ class AddRaidInfo extends Component {
                     }}
                     />
                 </div>
-                <div className="pure-u-1-4">
-                    <FlatButton
+                <div className="submit">
+                    <RaisedButton
+                        primary={true}
                         onTouchTap={() => {
                             if(raidInfo.get('Dps') || raidInfo.get('Tank') || raidInfo.get('Healer')){
                                 if(raidInfo.get('class')) {
@@ -74,10 +75,11 @@ class AddRaidInfo extends Component {
                 <div className="pure-u-1-1">
                     <BigCalendar
                         selectable
+                        toolbar="false"
                         culture="lv-LV"
                         events={events}
                         defaultView='week'
-                        defaultDate={new Date()}
+                        defaultDate={new Date(2016,1,1)}
                         onSelectEvent={event => alert(event.title)}
                         onSelectSlot={(slotInfo) => /*alert(
                             `selected slot: \n\nstart ${slotInfo.start.toLocaleString()} ` +

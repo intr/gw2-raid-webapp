@@ -13,9 +13,9 @@ class GwClass extends Component {
         return (
             <img
                 style={{
-                width:'30px',
-                height:'30px',
-                opacity: selectedClass == this.props.class ? '1' : '0.5'
+                width:'80px',
+                height:'80px',
+                opacity: selectedClass == this.props.class ? '1' : '0.2'
                 }}
                 onClick={this.onClick.bind(this)}
                 title={this.props.class}

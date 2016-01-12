@@ -6,10 +6,11 @@ class UsernameField extends Component {
     render() {
         return (
             <AutoComplete
-            dataSource = {this.props.usernames}
-            showAllItems = {true}
-            onUpdateInput={(t) => this.props.onUpdateInput(t)}
-            onNewRequest={(t) => this.props.onUpdateInput(t)}
+                hintText="> GW2 account-name*"
+                dataSource = {this.props.usernames}
+                showAllItems = {true}
+                onUpdateInput={(t) => this.props.onUpdateInput(t)}
+                onNewRequest={(t) => this.props.onUpdateInput(t)}
             />
         )
     }

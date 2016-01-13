@@ -6,17 +6,17 @@ const List = require('material-ui/lib/lists/list');
 const Avatar = require('material-ui/lib/avatar');
 const ListDivider = require('material-ui/lib/lists/list-divider');
 const ListItem = require('material-ui/lib/lists/list-item');
-import { removeCharacterInfo } from '../../redux/actions/CharacterList';
+import { removeCharacterInfo } from '../../redux/actions/CalendarEventList';
 
 class ViewComponent extends Component {
 
 
     render() {
-        const { dispatch, raidInfo, characterList } = this.props;
+        const { dispatch, raidInfo, calendarEventList } = this.props;
         return (
             <div>
                 <List key="CHARACTER_LIST">
-                    {characterList.map((character, index) => {
+                    {calendarEventList.map((character, index) => {
                         const imgSrc = "/build/img/classes/" + character.class + ".png";
                         const HEALER = character.Healer ? "Healer: True" : "Healer: False";
                         const TANK = character.Tank ? "Tank: True" : "Tank: False";
@@ -53,7 +53,7 @@ class ViewComponent extends Component {
 function select(state) {
     return {
         raidInfo: state.raidInfo,
-        characterList: state.characterList
+        calendarEventList: state.calendarEventList
     }
 }
 

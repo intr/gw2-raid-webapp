@@ -18,4 +18,4 @@ class RaidApp extends Component {
     }
 }
 
-render(<RaidApp />, document.getElementById('example'));
+render(<RaidApp />, document.getElementById('gw2-raid-webapp'));

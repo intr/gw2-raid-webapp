@@ -87,3 +87,7 @@ button {
     opacity: 0.5;
     filter: alpha(opacity=90); /* For IE8 and earlier */
 }
+
+.rbc-time-slot:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}

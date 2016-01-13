@@ -2,7 +2,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import raidInfo from './reducers/raidInfo';
 import timeSelect from './reducers/timeSelect';
 import submitApp from './reducers/submitApp';
-import characterList from './reducers/CharacterList';
+import calendarEventList from './reducers/CalendarEventList';
 import thunk from 'redux-thunk';
 
 
@@ -10,7 +10,7 @@ let app = combineReducers({
     raidInfo,
     timeSelect,
     submitApp,
-    characterList
+    calendarEventList
 });
 
 const createStoreWithMiddleware = applyMiddleware(

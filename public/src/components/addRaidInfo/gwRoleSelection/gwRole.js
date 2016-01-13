@@ -11,7 +11,7 @@ class Role extends Component {
 
     render() {
         const raidInfo = Immutable.Map(this.props.raidInfo);
-        let imgSrc = "/build/img/" + this.props.role + "Icon.jpg";
+        let imgSrc = "/img/" + this.props.role + "Icon.jpg";
         return (
             <a className={raidInfo.get(this.props.role) ? "selected" : "unselected"} href="#">
                 <img

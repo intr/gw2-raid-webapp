@@ -17,7 +17,7 @@ class ViewComponent extends Component {
             <div>
                 <List key="CHARACTER_LIST">
                     {calendarEventList.map((character, index) => {
-                        const imgSrc = "/build/img/classes/" + character.class + ".png";
+                        const imgSrc = "/img/classes/" + character.class + ".png";
                         const HEALER = character.Healer ? "Healer: True" : "Healer: False";
                         const TANK = character.Tank ? "Tank: True" : "Tank: False";
                         const DPS = character.Dps ? "Dps: True" : "Dps: False";

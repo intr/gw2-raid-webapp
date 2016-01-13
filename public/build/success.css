@@ -1,0 +1,38 @@
+body {
+    background-color: black;
+    background-image: url("./img/ColinJohanson.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+H2 {
+    padding-top: 25px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 42px;
+    color: white;
+    text-align: center
+}
+
+.center {
+    margin: auto;
+    padding: 40px;
+}
+
+* {
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -142px; /* the bottom margin is the negative value of the footer's height */
+}
+.footer, .push {
+    height: 142px; /* .push must be the same height as .footer */
+}

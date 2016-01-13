@@ -10,7 +10,7 @@ class GwClass extends Component {
 
     render() {
         const raidInfo = Immutable.Map(this.props.raidInfo);
-        let imgSrc = "/build/img/classes/" + this.props.class + ".png";
+        let imgSrc = "/img/classes/" + this.props.class + ".png";
         return (
             <a className={raidInfo.get(this.props.class) ? "selected" : "unselected"} href="#">
             <img

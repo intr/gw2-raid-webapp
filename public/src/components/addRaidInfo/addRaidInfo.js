@@ -76,19 +76,23 @@ class AddRaidInfo extends Component {
                                                         Warrior: raidInfo.get("Warrior"),
                                                         calendarEvents: calendarEventList
                                                     }
-                                        ))
+                                                )
+                                            )
+                                            location.reload(true);
                                         } else {
-                                            console.log("ADD SOMETHING TO SUBMIT")
+                                            alert("Pievienojiet vismaz 1 jums derīgu reida laiku kalendārā!")
                                         }
                                     } else {
-                                    console.log("ENTER USERNAME!")
+                                        alert("Ievadiet savu Guild Wars 2 konta vārdu")
                                     }
+                                } else {
+                                    alert("Izvēlieties vismaz vienu profesiju!")
                                 }
                             } else {
-                            console.log("SELECT ROLE!")
+                                alert("Izvēlieties vismaz vienu lomu!")
                             }
                         }}
-                        label="Submit"/>
+                        label="Iesniegt"/>
                 </div>
                 <div className="pure-u-1-1">
                     <BigCalendar

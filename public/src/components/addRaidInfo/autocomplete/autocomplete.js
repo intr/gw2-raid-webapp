@@ -6,7 +6,7 @@ class UsernameField extends Component {
     render() {
         return (
             <AutoComplete
-                hintText="> GW2 account-name*"
+                hintText="> GW2 konta vārds*"
                 dataSource = {this.props.usernames}
                 showAllItems = {true}
                 onUpdateInput={(t) => this.props.onUpdateInput(t)}

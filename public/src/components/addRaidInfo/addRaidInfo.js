@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Component } from 'react';
 import { addRole, addClass, addUsername } from '../../redux/actions/addRaidInfo';
 import { addCalendarEvent } from '../../redux/actions/CalendarEventList';
+import { removeCalendarEvent } from '../../redux/actions/CalendarEventList';
 import { submitApp } from '../../redux/actions/index';
 const RaisedButton = require('material-ui/lib/raised-button');
 import RoleSelection from './gwRoleSelection/gwRoleSelection';
@@ -87,7 +88,7 @@ class AddRaidInfo extends Component {
                             console.log("SELECT ROLE!")
                             }
                         }}
-                        label="Submit" />
+                        label="Submit"/>
                 </div>
                 <div className="pure-u-1-1">
                     <BigCalendar
@@ -97,24 +98,31 @@ class AddRaidInfo extends Component {
                         events={events}
                         defaultView='week'
                         defaultDate={new Date(2016,1,1)}
-                        onSelectEvent={event => alert(event.title)}
-                        onSelectSlot={(slotInfo) => /*alert(
-                            `selected slot: \n\nstart ${slotInfo.start.toLocaleString()} ` +
-                            `\nend: ${slotInfo.end.toLocaleString()}`*/
-                        (
-                            events.push(
-                                {
-                                    "title": "Reida laiks",
-                                    "start": slotInfo.start,
-                                    "end": slotInfo.end
+                        onSelectEvent={event => {
+                                var r = confirm("Vai vēlaties izdzēst šo reida laiku?");
+                                if (r == true) {
+                                    console.log(event)
+                                    var index = events.indexOf(event);
+                                    events.splice(index, 1)
+                                    dispatch(removeCalendarEvent(index));
                                 }
-                            ),
-                            dispatch(addCalendarEvent({
-                                        startDate: slotInfo.start,
-                                        endDate: slotInfo.end
-                                        })),
-                            this.forceUpdate()
-                      )}
+                                this.forceUpdate()
+                            }}
+                        onSelectSlot={(slotInfo) =>
+                            (
+                                events.push(
+                                    {
+                                        "title": "Reida laiks",
+                                        "start": slotInfo.start,
+                                        "end": slotInfo.end
+                                    }
+                                ),
+                                dispatch(addCalendarEvent({
+                                            startDate: slotInfo.start,
+                                            endDate: slotInfo.end
+                                            })),
+                                this.forceUpdate()
+                          )}
                     />
                 </div>
             </div>

@@ -6,7 +6,7 @@ const List = require('material-ui/lib/lists/list');
 const Avatar = require('material-ui/lib/avatar');
 const ListDivider = require('material-ui/lib/lists/list-divider');
 const ListItem = require('material-ui/lib/lists/list-item');
-import { removeCharacterInfo } from '../../redux/actions/CalendarEventList';
+import { removeCalendarEvent } from '../../redux/actions/CalendarEventList';
 
 class ViewComponent extends Component {
 
@@ -31,7 +31,7 @@ class ViewComponent extends Component {
                                     primaryText={character.username}
                                     initiallyOpen={true}
                                     onTouchTap={() => {
-                                        dispatch(removeCharacterInfo(index));
+                                        dispatch(removeCalendarEvent(index));
                                     }}
                                     nestedItems={[
                                     <div>

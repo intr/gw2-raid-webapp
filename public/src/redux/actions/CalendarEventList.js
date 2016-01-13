@@ -5,7 +5,7 @@ export function addCalendarEvent(info) {
     }
 }
 
-export function removeCharacterInfo(index) {
+export function removeCalendarEvent(index) {
     return {
         type: "REMOVE_CALENDAR_EVENT",
         index

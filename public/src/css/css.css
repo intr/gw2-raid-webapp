@@ -91,3 +91,7 @@ button {
 .rbc-time-slot:hover {
     background-color: rgba(0, 0, 0, 0.1);
 }
+
+.rbc-event:hover {
+    background-color: rgba(255, 0, 0, 0.5);
+}

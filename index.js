@@ -20,6 +20,8 @@ db = new Datastore({ filename: __dirname + '/db.json', autoload: true });
 
 app.post('/api/sendApp',function(req, res) {
     console.log(req.body);
+    console.log(req.ip);
+    req.body.ip = req.ip;
     db.insert(req.body);
 })
 
